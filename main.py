@@ -26,7 +26,7 @@ class CrossfitAutoSign:
         self.crossfit = f.readline().split("\n")[0]
         self.current_date = start_date
         self.br = RoboBrowser(history=True, parser="html.parser")
-        schedule.every().day.at("13:13").do(self.Run)
+        schedule.every().day.at("01:00").do(self.Run)
         while True:
             schedule.run_pending()
             time.sleep(30)
