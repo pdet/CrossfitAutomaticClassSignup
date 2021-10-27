@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 #config needs to be private
-# config.txt
+config.txt
