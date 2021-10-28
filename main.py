@@ -35,8 +35,8 @@ class CrossfitAutoSign:
         self.br.open(url='https://'+ self.crossfit+'.sportbitapp.nl/cbm/account/inloggen/?post=1', method='post', data=self.credentials)
 
     def ScheduleClass(self,date_time):
-        year_number = str(date_time.isocalendar().year)
-        week_number = str(date_time.isocalendar().week)
+        year_number = str(date_time.isocalendar()[0])
+        week_number = str(date_time.isocalendar()[1])
         self.br.open('https://'+ self.crossfit+'.sportbitapp.nl/cbm/account/lesmomenten/'+year_number+'/'+week_number+'/?locatie=2')
         date_str = date_time.strftime("%d-%m-%Y")
         time_str = date_time.strftime("%H:%M")
@@ -65,5 +65,5 @@ class CrossfitAutoSign:
         self.current_date += datetime.timedelta(days=1)
 
 
-start_date = datetime.date(2021,11,9)
+start_date = datetime.date(2021,11,10)
 CrossfitAutoSign(start_date)
